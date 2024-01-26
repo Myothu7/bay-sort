@@ -1,18 +1,23 @@
 @extends('dashboard.layouts.app')
 
 @section('content')
- <!-- Basic Bootstrap Table -->
- <div class="card">
-    @if ($errors->any())
-        <div class="alert alert-danger">
+ @if ($errors->any())
+ <div class="row">
+    <div class="col-8"></div>
+    <div class="col-4">
+        <div class="alert alert-danger alert-dismissible fade show p-2" role="alert"">
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    @endif
-
+    </div>
+ </div>
+@endif
+ <!-- Basic Bootstrap Table -->
+ <div class="card">
     <div class="card-header p-3">
         <div class="d-flex justify-content-between algin-items-center">
             <h5>Table Basic</h5>
@@ -39,16 +44,17 @@
                     <td id="name{{ $user->id }}">{{ $user->name }}</td>
                     <td id="email{{ $user->id }}">{{ $user->email }}</td>
                     <td>
-                        <span class='btn btn-outline-primary btn-sm' id="edit{{ $user->id }}" data-bs-toggle="modal" data-bs-target="" onclick="show({{ $user->id }})">
+                        <span class='btn btn-outline-primary btn-sm' id="edit{{ $user->id }}" data-bs-toggle="modal" data-bs-target="#editUser" onclick="editUser({{$user->id}})">
                             <i class="fas fa-user-edit hover"></i>
                         </span>
-                        <button class='btn btn-outline-danger btn-sm' form='deleteForm{{$user->id}}' onclick="return confirm('Are you sure you want to delete?')">
+                        <button class='btn btn-outline-danger btn-sm' form='deleteForm{{$user->id}}' data-bs-toggle="modal" data-bs-target="#deleteUser" onclick="deleteUser({{$user->id}})">
                             <i class="fas fa-trash"></i>
                         </button>
-                        <form action="{{ route('users.destroy',$user->id) }}" id='deleteForm{{$user->id}}' method="post">
+                        {{-- <form action="{{ route('users.destroy',$user->id) }}" id='deleteForm{{$user->id}}' method="post" onsubmit="delete({{$user->id}})">
                             @csrf
                             @method('delete')
-                        </form>
+                            <input type="submit">
+                        </form> --}}
                     </td>
                 </tr>
             @endforeach
@@ -64,13 +70,17 @@
 
   <script>
 
-    function show(id) {
-        const edit = document.querySelector("#edit" + id);
-        edit.setAttribute("data-bs-target", "#editUser");
-        edit.click();
+    function editUser(id){
+        const name = document.getElementById(`name${id}`);
+        const email = document.getElementById(`email${id}`);
+        document.getElementById('name').value =  name.textContent;
+        document.getElementById('email').value =  email.textContent;
+    } 
 
-        // let id = document.querySelector("#id"+id);
-        // console.log(id);
+    function deleteUser(id){
+        const deleteForm = document.forms['myForm'];
+        deleteForm.setAttribute('action', 'http://127.0.0.1:8000/users/'+id);
+        // console.log(deleteForm.getAttribute('action'));
     }
 
     function confirmAndSubmit(id) {
