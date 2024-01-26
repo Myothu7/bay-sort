@@ -18,6 +18,7 @@
     <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
 
     <meta name="description" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="...">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href={{asset("assets/img/favicon/favicon.ico")}} />
@@ -44,7 +45,7 @@
     <link rel="stylesheet" href={{asset("assets/vendor/libs/apex-charts/apex-charts.css")}} />
 
     <!-- Page CSS -->
-
+    <link rel="stylesheet" href={{ asset("assets/vendor/css/pages/page-auth.css")}} />
     <!-- Helpers -->
     <script src={{asset("assets/vendor/js/helpers.js")}}></script>
 
@@ -54,7 +55,3 @@
   </head>
 
   <body>
-     <!-- Layout wrapper -->
-     <div class="layout-wrapper layout-content-navbar">
-        <div class="layout-container">
-          <!-- Menu -->
