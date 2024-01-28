@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-header p-3">
             <div class="d-flex justify-content-between algin-items-center">
-                <h5>All Category</h5>
+                <h5>All {{$main_category->name}}</h5>
                 <div data-bs-toggle="modal" data-bs-target="#create" class="hover">
                     <i class="fas fa-user-plus fa-2x text-primary"></i>
                 </div>
@@ -23,7 +23,7 @@
                 @php
                     $i = 1;
                 @endphp
-               @forelse ($categories as $category)
+               @forelse ($sub_categories as $category)
                     <tr class="hover">
                         <td id="id{{ $category->id }}">{{ $i++ }}</td>
                         <td id="name{{ $category->id }}">{{ $category->name }}</td>
@@ -34,16 +34,11 @@
                             <button class='btn btn-outline-danger btn-sm' form='deleteForm{{$category->id}}' data-bs-toggle="modal" data-bs-target="#delete">
                                 <i class="fas fa-trash"></i>
                             </button>
-                            <a href="{{url('categories/sub_categories',$category->id)}}" class='btn btn-outline-warning btn-sm'>
+                            <a href="{{url('categories',$category->id)}}" class='btn btn-outline-warning btn-sm'>
                                 <i class="fas fa-list"></i>
                             </a>
-                            {{-- <form action="{{ route('categories.destroy',$category->id) }}" id='deleteForm{{$category->id}}' method="post">
-                                @csrf
-                                @method('delete')
-                            </form> --}}
                         </td>
                     </tr>
-             
                 @empty
                     <tr class="text-center">
                         <td colspan="3" class="text-muted">Empty Record</td>
@@ -56,7 +51,7 @@
     </div>
 @endsection
 
-@include('dashboard.category.modal')
+@include('dashboard.sub_category.modal')
 
 <script>
     const show = (id) => {

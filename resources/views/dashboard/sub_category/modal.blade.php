@@ -7,13 +7,14 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="staticBackdropLabel">
-                            Category Create
+                            Sub Category Create
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="{{ route('categories.store') }}" method="post">
+                    <form action="{{ route('sub_categories.store') }}" method="post">
                         @csrf
                         <div class="modal-body">
+                            <input type="hidden" name="sub_category_id" value="{{$main_category->id}}">
                             <input type="text" name="name" class="form-control" placeholder="Name">
                         </div>
                         <div class="modal-footer">

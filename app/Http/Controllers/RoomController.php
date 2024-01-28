@@ -15,7 +15,8 @@ class RoomController extends Controller
     {
         return view('dashboard.room.index', [
             'rooms' => Room::orderByDesc('id')->get(),
-            'categories' => Category::all()
+            'categories' => Category::where('name', 'like', '%Room%')
+                                      ->whereNotNull('sub_category_id')->get()
         ]);
     }
 

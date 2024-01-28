@@ -30,7 +30,7 @@
                     <tr class="hover">
                         <td id="id{{ $room->id }}">{{ $i++ }}</td>
                         <td id="name{{ $room->id }}">{{ $room->name }}</td>
-                        <td>{{ Str::of($room->content)->words(6,' ...'); }}</td>
+                        <td>{{ Str::of($room->content)->words(6,' ...') }}</td>
                         <td>{{ $room->guest }}</td>
                         <td>{{ $room->height }}</td>
                         <td>
@@ -48,7 +48,7 @@
                     </tr>
                 @empty
                     <tr class="text-center">
-                        <td colspan="3" class="text-muted">Empty Record</td>
+                        <td colspan="6" class="text-muted">Empty Record</td>
                     </tr>
                 @endforelse
 

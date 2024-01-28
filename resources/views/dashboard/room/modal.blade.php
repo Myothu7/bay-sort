@@ -16,9 +16,12 @@
                         <div class="modal-body">
                             <input type="text" name="name" class="form-control mb-2" placeholder="Name" required>
                             <select name="category_id" id="" class="form-select mb-2">
-                                @foreach ($categories as $category)
+                                <option value="" hidden>--select option--</option>
+                                @forelse ($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
+                                    @empty
+                                    <option value="" disabled>empty category data</option>
+                                @endforelse
                             </select>
                             <input type="number" name="guest" class="form-control mb-2" placeholder="Guest" required>
                             <input type="number" name="height" class="form-control mb-2" placeholder="Height" required>
