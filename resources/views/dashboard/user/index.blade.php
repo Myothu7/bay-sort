@@ -20,7 +20,7 @@
  <div class="card">
     <div class="card-header p-3">
         <div class="d-flex justify-content-between algin-items-center">
-            <h5>Table Basic</h5>
+            <h5>All users</h5>
             <div data-bs-toggle="modal" data-bs-target="#createUser" class="hover">
                 <i class="fas fa-user-plus fa-2x text-primary"></i>
             </div>
@@ -39,7 +39,7 @@
         </thead>
         <tbody class="table-border-bottom-0">
            @foreach ($users as $user)
-                <tr>
+                <tr class="hover">
                     <td id="id{{ $user->id }}">{{ $user->id }}</td>
                     <td id="name{{ $user->id }}">{{ $user->name }}</td>
                     <td id="email{{ $user->id }}">{{ $user->email }}</td>

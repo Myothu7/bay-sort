@@ -79,10 +79,24 @@
         </a>
       </li>
 
-      <li class="menu-item active">
+      <li class="menu-item">
+        <a href="{{ route('rooms.index') }}" class="menu-link">
+            <i class="fas fa-hotel"></i>
+            <div data-i18n="Basic" class="ms-3">Rooms</div>
+        </a>
+      </li>
+
+      <li class="menu-item">
+        <a href="{{ route('categories.index') }}" class="menu-link">
+            <i class="fas fa-tasks"></i>
+          <div data-i18n="Basic" class="ms-3">Category</div>
+        </a>
+      </li>
+
+      <li class="menu-item">
         <a href="{{ route('users.index') }}" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-collection"></i>
-          <div data-i18n="Basic">Users</div>
+            <i class="fas fa-users"></i>
+          <div data-i18n="Basic" class="ms-3">Users</div>
         </a>
       </li>
 
