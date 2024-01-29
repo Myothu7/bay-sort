@@ -16,5 +16,15 @@ Route::resource('categories', CategoryController::class);
 Route::resource('rooms', RoomController::class);
 Route::resource('sub_categories', SubCategoryController::class);
 
+Route::get('home', function() {
+    return view('frontend.index');
+});
 
+Route::get('shop_with_us', function() {
+    return view('frontend.shop_with_us');
+});
+
+Route::get('health_and_fitness', function() {
+    return view('frontend.health_and_fitness');
+});
 
