@@ -22,7 +22,7 @@
         <div class="d-flex justify-content-between algin-items-center">
             <h5>All users</h5>
             <div data-bs-toggle="modal" data-bs-target="#createUser" class="hover">
-                <i class="fas fa-user-plus fa-2x text-primary"></i>
+                <i class="fa-solid fa-square-plus fa-2x text-primary"></i>
             </div>
         </div>
     </div>

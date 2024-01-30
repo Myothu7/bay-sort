@@ -7,24 +7,22 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="staticBackdropLabel">
-                            Room Create
+                            Recreational Facilitiy Create
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="{{ route('rooms.store') }}" method="post">
+                    <form action="{{ route('facilities.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
-                            <input type="text" name="name" class="form-control mb-2" placeholder="Name" required>
-                            <select name="category_id" id="" class="form-select mb-2">
-                                <option value="" hidden>--select option--</option>
-                                @forelse ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                    @empty
-                                    <option value="" disabled>empty category data</option>
-                                @endforelse
+                            <input type="text" name="name" class="form-control mb-2" placeholder="Name" >
+                            <select name="type" class="form-select">
+                                        <option>--select value--</option>
+                                    @foreach ($type as $data)
+                                        <option value="{{$data}}">{{ $data }}</option>
+                                    @endforeach
                             </select>
-                            <input type="number" name="guest" class="form-control mb-2" placeholder="Guest" required>
-                            <input type="number" name="height" class="form-control mb-2" placeholder="Height" required>
+                            <label for="">image</label>
+                            <input type="file" name="image" class="form-control mb-2">   
                             <textarea name="content" id="" cols="30" rows="4" class="form-control" placeholder="Content .."></textarea>
                         </div>
                         <div class="modal-footer">

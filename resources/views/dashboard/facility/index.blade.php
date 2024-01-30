@@ -4,9 +4,9 @@
     <div class="card">
         <div class="card-header p-3">
             <div class="d-flex justify-content-between algin-items-center">
-                <h5>All Category</h5>
+                <h5>All Recreational Facilities</h5>
                 <div data-bs-toggle="modal" data-bs-target="#create" class="hover">
-                    <i class="fas fa-user-plus fa-2x text-primary"></i>
+                    <i class="fa-solid fa-square-plus fa-2x text-primary"></i>
                 </div>
             </div>
         </div>
@@ -16,6 +16,7 @@
               <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Content</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -23,24 +24,18 @@
                 @php
                     $i = 1;
                 @endphp
-               @forelse ($categories as $category)
+               @forelse ($facilities as $data)
                     <tr class="hover">
-                        <td id="id{{ $category->id }}">{{ $i++ }}</td>
-                        <td id="name{{ $category->id }}">{{ $category->name }}</td>
+                        <td id="id{{ $data->id }}">{{ $i++ }}</td>
+                        <td id="name{{ $data->id }}">{{ $data->name }}</td>
+                        <td>{{ Str::of($data->content)->words(6,' ...') }}</td>
                         <td>
-                            <span class='btn btn-outline-primary btn-sm' id="edit{{ $category->id }}" data-bs-toggle="modal" data-bs-target="">
+                            <span class='btn btn-outline-primary btn-sm' id="edit{{ $data->id }}" data-bs-toggle="modal" data-bs-target="">
                                 <i class="fas fa-edit hover"></i>
                             </span>
-                            <button class='btn btn-outline-danger btn-sm' form='deleteForm{{$category->id}}' data-bs-toggle="modal" data-bs-target="#delete">
+                            <button class='btn btn-outline-danger btn-sm' form='deleteForm{{$data->id}}' data-bs-toggle="modal" data-bs-target="#delete">
                                 <i class="fas fa-trash"></i>
                             </button>
-                            <a href="{{url('categories/sub_categories',$category->id)}}" class='btn btn-outline-warning btn-sm'>
-                                <i class="fas fa-list"></i>
-                            </a>
-                            {{-- <form action="{{ route('categories.destroy',$category->id) }}" id='deleteForm{{$category->id}}' method="post">
-                                @csrf
-                                @method('delete')
-                            </form> --}}
                         </td>
                     </tr>
              
@@ -56,5 +51,5 @@
     </div>
 @endsection
 
-@include('dashboard.category.modal')
+@include('dashboard.facility.modal')
 

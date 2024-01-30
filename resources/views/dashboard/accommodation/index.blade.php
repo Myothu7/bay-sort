@@ -4,9 +4,9 @@
     <div class="card">
         <div class="card-header p-3">
             <div class="d-flex justify-content-between algin-items-center">
-                <h5>All Rooms</h5>
+                <h5>All Accommodation</h5>
                 <div data-bs-toggle="modal" data-bs-target="#create" class="hover">
-                    <i class="fas fa-user-plus fa-2x text-primary"></i>
+                    <i class="fa-solid fa-square-plus fa-2x text-primary"></i>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
                 @php
                     $i = 1;
                 @endphp
-            @forelse ($rooms as $room)
+            @forelse ($accommodation as $room)
                     <tr class="hover">
                         <td id="id{{ $room->id }}">{{ $i++ }}</td>
                         <td id="name{{ $room->id }}">{{ $room->name }}</td>
@@ -57,4 +57,4 @@
         </div>
     </div>
 @endsection
-@include('dashboard.room.modal')
+@include('dashboard.accommodation.modal')

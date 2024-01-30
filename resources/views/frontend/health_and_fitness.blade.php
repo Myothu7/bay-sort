@@ -42,11 +42,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="row">
-                        <div class="col-12">
-                            <img src="https://mdybayresort.com/wp-content/uploads/2022/05/photo_2022-05-11_15-56-19-1024x682.jpg" alt="" 
-                            class="w-100 vh-100">
+                        <div class="col-8 w-90">
+                            <img src="https://mdybayresort.com/wp-content/uploads/2022/05/photo_2022-05-11_15-56-19-1024x682.jpg" alt=""
+                            class="w-100 vh-80" style="object-fit: cover">
                         </div>
-                        {{-- <div class="col-4"></div> --}}
+                        {{--    <div class="col-4"></div> --}}
                     </div>
                 </div>
             </div>

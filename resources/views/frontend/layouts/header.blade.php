@@ -20,24 +20,26 @@
             </div>
         </div>
         <div class="d-flex justify-content-around align-items-center">
-            <img src="https://mdybayresort.com/wp-content/uploads/2022/04/MDY-Bay-resort-logo-01.png" alt="" width="100" height="100">
+            <a href="{{ route('index') }}">
+                <img src="https://mdybayresort.com/wp-content/uploads/2022/04/MDY-Bay-resort-logo-01.png" alt="" width="100" height="100">
+            </a>
             <div class="">
-                <a href="" class="text-decoration-none text-black">Accommodation</a>
+                <a href="{{ route('accommodation') }}" class="text-decoration-none text-black">Accommodation</a>
             </div>
             <div class="">
                 <a href="" class="text-decoration-none text-black">Bar & Restaurant</a>
             </div>
             <div class="">
-                <a href="" class="text-decoration-none text-black">Shop with me</a>
+                <a href="{{ route('shop') }}" class="text-decoration-none text-black">Shop with me</a>
             </div>
             <div class="">
-                <a href="" class="text-decoration-none text-black">Health & Fitness</a>
+                <a href="{{ route('health') }}" class="text-decoration-none text-black">Health & Fitness</a>
             </div>
             <div class="">
                 <a href="" class="text-decoration-none text-black">Recreational Facilities</a>
             </div>
             <div class="">
-                <a href="" class="text-decoration-none text-black">Nearby Attractions</a>
+                <a href="{{ route('nearby_attraction') }}" class="text-decoration-none text-black">Nearby Attractions</a>
             </div>
             <div class="">
                 <a href="" class="text-decoration-none text-black">About Us</a>
