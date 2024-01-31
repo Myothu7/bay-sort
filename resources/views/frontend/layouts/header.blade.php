@@ -36,16 +36,16 @@
                 <a href="{{ route('health') }}" class="text-decoration-none text-black">Health & Fitness</a>
             </div>
             <div class="">
-                <a href="" class="text-decoration-none text-black">Recreational Facilities</a>
+                <a href="{{route('facilities')}}" class="text-decoration-none text-black">Recreational Facilities</a>
             </div>
             <div class="">
                 <a href="{{ route('nearby_attraction') }}" class="text-decoration-none text-black">Nearby Attractions</a>
             </div>
             <div class="">
-                <a href="" class="text-decoration-none text-black">About Us</a>
+                <a href="{{ route('about_us') }}" class="text-decoration-none text-black">About Us</a>
             </div>
             <div class="">
-                <a href="" class="text-decoration-none text-black">Contact</a>
+                <a href="{{ route('contact') }}" class="text-decoration-none text-black">Contact</a>
             </div>
         </div>
    </div>

@@ -33,7 +33,7 @@
        </div>
    </div>
    <div class="container-fluid px-4">
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between py-2 px-3">
             <div>
                 Developed by <span class="text-italic">CID WEB TEAM</span>
             </div>
